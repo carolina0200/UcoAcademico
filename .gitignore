@@ -8,6 +8,7 @@
 *.pydevproject
 .project
 .metadata
+.sonarlint
 bin/**
 tmp/**
 tmp/**/*
