@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../UcoAcademico_API/UcoAcademico_API.iml" filepath="$PROJECT_DIR$/../UcoAcademico_API/UcoAcademico_API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UcoAcademico_DTO/UcoAcademico_DTO.iml" filepath="$PROJECT_DIR$/../UcoAcademico_DTO/UcoAcademico_DTO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UcoAcademico_Datos.iml" filepath="$PROJECT_DIR$/UcoAcademico_Datos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UcoAcademico_Entidad/UcoAcademico_Entidad.iml" filepath="$PROJECT_DIR$/../UcoAcademico_Entidad/UcoAcademico_Entidad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UcoAcademico_Negocio/UcoAcademico_Negocio.iml" filepath="$PROJECT_DIR$/../UcoAcademico_Negocio/UcoAcademico_Negocio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UcoAcademico_Transversal/UcoAcademico_Transversal.iml" filepath="$PROJECT_DIR$/../UcoAcademico_Transversal/UcoAcademico_Transversal.iml" />
+    </modules>
+  </component>
+</project>

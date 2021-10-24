@@ -11,9 +11,21 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
-          <release>16</release>
+          <release>11</release>
         </configuration>
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+    <dependency>
+      <groupId>co.edu.uco.ucoacademico</groupId>
+      <artifactId>UcoAcademico_Transversal</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>co.edu.uco.ucoacademico</groupId>
+      <artifactId>UcoAcademico_Entidad</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 </project>
