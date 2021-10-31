@@ -18,6 +18,11 @@
   </build>
   <dependencies>
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <version>2.5.5</version>
+    </dependency>
+    <dependency>
       <groupId>co.edu.uco.ucoacademico</groupId>
       <artifactId>UcoAcademico_Transversal</artifactId>
       <version>0.0.1-SNAPSHOT</version>

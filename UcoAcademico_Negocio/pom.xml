@@ -12,6 +12,13 @@
         <version>3.8.1</version>
         <configuration>
           <release>11</release>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct-processor</artifactId>
+              <version>1.4.2.Final</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
     </plugins>
@@ -31,6 +38,16 @@
       <groupId>co.edu.uco.ucoacademico</groupId>
       <artifactId>UcoAcademico_DTO</artifactId>
       <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>co.edu.uco.ucoacademico</groupId>
+      <artifactId>UcoAcademico_Datos</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>1.4.2.Final</version>
     </dependency>
   </dependencies>
 </project>
