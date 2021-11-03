@@ -2,6 +2,7 @@ package co.edu.uco.ucoacademico.negocio.fachada.impl;
 
 import co.edu.uco.ucoacademico.dto.PersonaDTO;
 import co.edu.uco.ucoacademico.negocio.dominio.Persona;
+import co.edu.uco.ucoacademico.negocio.ensamblador.PersonaEnsamblador;
 import co.edu.uco.ucoacademico.negocio.fachada.PersonaFachada;
 import co.edu.uco.ucoacademico.negocio.negocio.PersonaNegocio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,29 +18,26 @@ public class PersonaFachadaImpl implements PersonaFachada {
     @Autowired
     private PersonaNegocio personaNegocio;
 
+    @Autowired
+    private PersonaEnsamblador ensamblador;
+
     @Override
-    public void registrar(PersonaDTO personaDTO) {
-        // ensamblar dominio
-        Persona persona = null;
-        personaNegocio.registrar(persona);
+    public void registrarDTO(PersonaDTO personaDTO) {
+        personaNegocio.registrar(ensamblador.DTOADominio(personaDTO));
     }
 
     @Override
-    public void modificar(PersonaDTO personaDTO) {
-        // ensamblar dominio
-        Persona persona = null;
-        personaNegocio.modificar(persona);
+    public void modificarDTO(PersonaDTO personaDTO) {
+        personaNegocio.modificar(ensamblador.DTOADominio(personaDTO));
     }
 
     @Override
-    public void eliminar(PersonaDTO personaDTO) {
-        // ensamblar dominio
-        Persona persona = null;
-        personaNegocio.eliminar(persona);
+    public void eliminarDTO(PersonaDTO personaDTO) {
+        personaNegocio.eliminar(ensamblador.DTOADominio(personaDTO));
     }
 
     @Override
-    public List<PersonaDTO> consultar() {
-        return null;
+    public List<PersonaDTO> consultarDTO() {
+        return ensamblador.dominiosADTOs(personaNegocio.consultar());
     }
 }

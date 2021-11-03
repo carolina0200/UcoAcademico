@@ -3,6 +3,7 @@ package co.edu.uco.ucoacademico.negocio.negocio.impl;
 import co.edu.uco.ucoacademico.datos.dao.TipoIdentificacionDAO;
 import co.edu.uco.ucoacademico.entidad.TipoIdentificacionEntidad;
 import co.edu.uco.ucoacademico.negocio.dominio.TipoIdentificacion;
+import co.edu.uco.ucoacademico.negocio.ensamblador.TipoIdentificacionEnsamblador;
 import co.edu.uco.ucoacademico.negocio.negocio.TipoIdentificacionNegocio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,18 +16,17 @@ public class TipoIdentificacionNegocioImpl implements TipoIdentificacionNegocio 
     @Autowired
     private TipoIdentificacionDAO tipoIdentificacionDAO;
 
+    @Autowired
+    private TipoIdentificacionEnsamblador ensamblador;
+
     @Override
     public void registrar(TipoIdentificacion tipoIdentificacion) {
-        // Ensamblar entidad
-        TipoIdentificacionEntidad tipoIdentificacionEntidad = null;
-        tipoIdentificacionDAO.save(tipoIdentificacionEntidad);
+        tipoIdentificacionDAO.save(ensamblador.dominioAEntidad(tipoIdentificacion));
     }
 
     @Override
     public void modificar(TipoIdentificacion tipoIdentificacion) {
-        // Ensamblar entidad
-        TipoIdentificacionEntidad tipoIdentificacionEntidad = null;
-        tipoIdentificacionDAO.save(tipoIdentificacionEntidad);
+        tipoIdentificacionDAO.save(ensamblador.dominioAEntidad(tipoIdentificacion));
     }
 
     @Override
@@ -36,8 +36,6 @@ public class TipoIdentificacionNegocioImpl implements TipoIdentificacionNegocio 
 
     @Override
     public List<TipoIdentificacion> consultar() {
-        var resultado = tipoIdentificacionDAO.findAll();
-        // Ensamblar a dominio
-        return null;
+        return ensamblador.entidadesADominios(tipoIdentificacionDAO.findAll());
     }
 }

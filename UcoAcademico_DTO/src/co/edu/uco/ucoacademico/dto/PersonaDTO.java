@@ -1,5 +1,8 @@
 package co.edu.uco.ucoacademico.dto;
 
+import co.edu.uco.ucoacademico.transversal.utilitario.UtilFecha;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import static co.edu.uco.ucoacademico.transversal.utilitario.UtilObjeto.obtenerValorDefecto;
 import static co.edu.uco.ucoacademico.transversal.utilitario.UtilFecha.obtenerFechaDefecto;
 import static co.edu.uco.ucoacademico.transversal.utilitario.UtilTexto.aplicarTrim;
@@ -9,13 +12,12 @@ public class PersonaDTO {
     private int codigo;
     private String nombre;
     private String email;
+    @JsonFormat(pattern="dd/MM/yyyy")
     private Date fechaNacimiento;
     private int edad;
     private TipoIdentificacionDTO tipoIdentificacion;
 
-    public PersonaDTO() {
-
-    }
+    public PersonaDTO() { }
 
     public PersonaDTO(int codigo, String nombre, String email, Date fechaNacimiento, int edad, TipoIdentificacionDTO tipoIdentificacion) {
         setCodigo(codigo);

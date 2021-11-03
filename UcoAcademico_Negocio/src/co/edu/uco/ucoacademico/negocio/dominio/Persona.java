@@ -1,8 +1,11 @@
 package co.edu.uco.ucoacademico.negocio.dominio;
-
 import co.edu.uco.ucoacademico.transversal.utilitario.UtilFecha;
 
 import java.util.Date;
+
+import static co.edu.uco.ucoacademico.transversal.utilitario.UtilFecha.obtenerFechaDefecto;
+import static co.edu.uco.ucoacademico.transversal.utilitario.UtilObjeto.obtenerValorDefecto;
+import static co.edu.uco.ucoacademico.transversal.utilitario.UtilTexto.aplicarTrim;
 
 public class Persona {
     private int codigo;
@@ -10,6 +13,20 @@ public class Persona {
     private String email;
     private Date fechaNacimiento;
     private TipoIdentificacion tipoIdentificacion;
+
+    public Persona() { }
+
+    public Persona(int codigo, String nombre, String email, Date fechaNacimiento, TipoIdentificacion tipoIdentificacion) {
+        setCodigo(codigo);
+        setNombre(nombre);
+        setEmail(email);
+        setFechaNacimiento(fechaNacimiento);
+        setTipoIdentificacion(tipoIdentificacion);
+    }
+
+    public static Persona crear() {
+        return new Persona();
+    }
 
     public int getEdad() {
         return UtilFecha.calcularAniosDiferenciaContraFechaActual(fechaNacimiento);
@@ -29,7 +46,7 @@ public class Persona {
     }
 
     public Persona setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = aplicarTrim(nombre);
         return this;
     }
 
@@ -38,7 +55,7 @@ public class Persona {
     }
 
     public Persona setEmail(String email) {
-        this.email = email;
+        this.email = aplicarTrim(email);
         return this;
     }
 
@@ -47,7 +64,7 @@ public class Persona {
     }
 
     public Persona setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+        this.fechaNacimiento = obtenerFechaDefecto(fechaNacimiento);
         return this;
     }
 
@@ -56,7 +73,7 @@ public class Persona {
     }
 
     public Persona setTipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
-        this.tipoIdentificacion = tipoIdentificacion;
+        this.tipoIdentificacion = obtenerValorDefecto(tipoIdentificacion, new TipoIdentificacion());
         return this;
     }
 }

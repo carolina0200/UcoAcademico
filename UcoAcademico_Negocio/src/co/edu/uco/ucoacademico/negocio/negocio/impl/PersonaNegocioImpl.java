@@ -3,6 +3,7 @@ package co.edu.uco.ucoacademico.negocio.negocio.impl;
 import co.edu.uco.ucoacademico.datos.dao.PersonaDAO;
 import co.edu.uco.ucoacademico.entidad.PersonaEntidad;
 import co.edu.uco.ucoacademico.negocio.dominio.Persona;
+import co.edu.uco.ucoacademico.negocio.ensamblador.PersonaEnsamblador;
 import co.edu.uco.ucoacademico.negocio.negocio.PersonaNegocio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,18 +16,17 @@ public class PersonaNegocioImpl implements PersonaNegocio {
     @Autowired
     private PersonaDAO personaDAO;
 
+    @Autowired
+    private PersonaEnsamblador ensamblador;
+
     @Override
     public void registrar(Persona persona) {
-        // ensamblar
-        PersonaEntidad personaEntidad = null;
-        personaDAO.save(personaEntidad);
+        personaDAO.save(ensamblador.dominioAEntidad(persona));
     }
 
     @Override
     public void modificar(Persona persona) {
-        // ensamblar
-        PersonaEntidad personaEntidad = null;
-        personaDAO.save(personaEntidad);
+        personaDAO.save(ensamblador.dominioAEntidad(persona));
     }
 
     @Override
@@ -36,8 +36,6 @@ public class PersonaNegocioImpl implements PersonaNegocio {
 
     @Override
     public List<Persona> consultar() {
-        var resultados = personaDAO.findAll();
-        // ensamblar
-        return null;
+        return ensamblador.entidadesADominios(personaDAO.findAll());
     }
 }

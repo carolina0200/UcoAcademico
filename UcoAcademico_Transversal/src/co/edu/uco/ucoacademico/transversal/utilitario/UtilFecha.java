@@ -6,7 +6,11 @@ import co.edu.uco.ucoacademico.transversal.utilitario.excepcion.UcoAcademicoTran
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import static java.util.Calendar.*;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class UtilFecha {
 
@@ -49,11 +53,24 @@ public class UtilFecha {
     }
 
     public static int calcularAniosDiferencia(Date fechaInicial, Date fechaFinal) {
-        return 0;
+        Calendar inicial = getCalendar(fechaInicial);
+        Calendar finald = getCalendar(fechaFinal);
+        int diff = finald.get(YEAR) - inicial.get(YEAR);
+        if (inicial.get(MONTH) > finald.get(MONTH) ||
+                (inicial.get(MONTH) == finald.get(MONTH) && inicial.get(DATE) > finald.get(DATE))) {
+            diff--;
+        }
+        return diff;
     }
 
     public static int calcularAniosDiferenciaContraFechaActual(Date fecha) {
         return calcularAniosDiferencia(fecha, obtenerFechaActual());
+    }
+
+    public static Calendar getCalendar(Date date) {
+        Calendar cal = Calendar.getInstance(Locale.US);
+        cal.setTime(date);
+        return cal;
     }
 
 }

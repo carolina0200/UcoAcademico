@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a93400-3b07-4757-97cf-fb2a033a3c9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/UcoAcademico_API/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UcoAcademico_API/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UcoAcademico_DTO/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UcoAcademico_DTO/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UcoAcademico_Datos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UcoAcademico_Datos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UcoAcademico_Entidad/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UcoAcademico_Entidad/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UcoAcademico_Negocio/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UcoAcademico_Negocio/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UcoAcademico_Transversal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UcoAcademico_Transversal/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c4a93400-3b07-4757-97cf-fb2a033a3c9b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +12,10 @@
   </component>
   <component name="ProjectId" id="1zvNYjsPxMCazhI2wZQQ7JlZZVp" />
   <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">

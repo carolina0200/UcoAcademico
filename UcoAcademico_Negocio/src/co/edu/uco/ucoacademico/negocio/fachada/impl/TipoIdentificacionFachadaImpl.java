@@ -2,6 +2,7 @@ package co.edu.uco.ucoacademico.negocio.fachada.impl;
 
 import co.edu.uco.ucoacademico.dto.TipoIdentificacionDTO;
 import co.edu.uco.ucoacademico.negocio.dominio.TipoIdentificacion;
+import co.edu.uco.ucoacademico.negocio.ensamblador.TipoIdentificacionEnsamblador;
 import co.edu.uco.ucoacademico.negocio.fachada.TipoIdentificacionFachada;
 import co.edu.uco.ucoacademico.negocio.negocio.TipoIdentificacionNegocio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,29 +18,26 @@ public class TipoIdentificacionFachadaImpl implements TipoIdentificacionFachada 
     @Autowired
     private TipoIdentificacionNegocio tipoIdentificacionNegocio;
 
+    @Autowired
+    private TipoIdentificacionEnsamblador ensamblador;
+
     @Override
     public void registrar(TipoIdentificacionDTO tipoIdentificacionDTO) {
-        // ensamblar dominio
-        TipoIdentificacion tipoIdentificacion = null;
-        tipoIdentificacionNegocio.registrar(tipoIdentificacion);
+        tipoIdentificacionNegocio.registrar(ensamblador.DTOADominio(tipoIdentificacionDTO));
     }
 
     @Override
     public void modificar(TipoIdentificacionDTO tipoIdentificacionDTO) {
-        // ensamblar dominio
-        TipoIdentificacion tipoIdentificacion = null;
-        tipoIdentificacionNegocio.modificar(tipoIdentificacion);
+        tipoIdentificacionNegocio.modificar(ensamblador.DTOADominio(tipoIdentificacionDTO));
     }
 
     @Override
     public void eliminar(TipoIdentificacionDTO tipoIdentificacionDTO) {
-        // ensamblar dominio
-        TipoIdentificacion tipoIdentificacion = null;
-        tipoIdentificacionNegocio.eliminar(tipoIdentificacion);
+        tipoIdentificacionNegocio.eliminar(ensamblador.DTOADominio(tipoIdentificacionDTO));
     }
 
     @Override
     public List<TipoIdentificacionDTO> consultar() {
-        return null;
+        return ensamblador.dominiosADTOs(tipoIdentificacionNegocio.consultar());
     }
 }

@@ -7,9 +7,7 @@ public class TipoIdentificacionDTO {
     private int codigo;
     private String nombre;
 
-    public TipoIdentificacionDTO() {
-
-    }
+    public TipoIdentificacionDTO() { }
 
     public TipoIdentificacionDTO(int codigo, String nombre) {
         setCodigo(codigo);
